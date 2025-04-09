@@ -40,25 +40,38 @@ Load the example dataset and perform the QLR test:
 
 {phang2}
 {cmd:. * Load in data (original data from FRED)}
+
+{phang2}
 {cmd:. use qlr_example.dta, clear}
 
 {phang2}
-{cmd:. * ADL(4,3) model forecasting employment growth with its own lags and }
-{cmd:. * the BAA-Tbond spread}
+{cmd:. * ADL(4,3) model forecasting employment growth with its own lags and the BAA-Tbond spread}
+
+{phang2}
 {cmd:. reg dlemp L(1/4).dlemp L(1/3).baa_r10 if tin(1962m1,2017m3), r}
 
 {phang2}
 {cmd:. * QLR test, generating graph of F statistics}
+
+{phang2}
 {cmd:. qlr dlemp L(1/4).dlemp L(1/3).baa_r10 if tin(1962m1,2017m3), graph}
 
 {phang2}
 {cmd:. * Saving graph of F statistics}
+
+{phang2}
 {cmd:. graph export adl43_qlr.pdf, replace}
 
 {phang2}
-{cmd:. * Save QLR statistics and break date to export into a table}
+{cmd:. * Save QLR statistics and break date to export}
+
+{phang2}
 {cmd:. local breakdate = r(breakdate)}
+
+{phang2}
 {cmd:. scalar qlr = r(qlr)}
+
+{phang2}
 {cmd:. scalar restrictions = r(restrictions)}
 
 {title:Saved Results}
