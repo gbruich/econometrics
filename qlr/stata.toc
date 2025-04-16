@@ -1,1 +1,2 @@
-qlr.pkg
+d Gregory Bruich, Ph.D. (gbruich@fas.harvard.edu)
+p Quandt (1960) Likelihood Ratio (QLR) test
